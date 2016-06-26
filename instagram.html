@@ -92,14 +92,25 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript">
 
-				var hash = window.location.hash;
-				var access_token = hash.replace('#access_token', '');
-				document.write(access_token);
+
+			var re = '/code=([\w\.]+)/'; 
+			var str = window.location;
+			var m;
+			 
+			if ((m = re.exec(str)) !== null) {
+			    if (m.index === re.lastIndex) {
+			        re.lastIndex++;
+			    }
+			    // View your result using the m-variable.
+			    // eg m[0] etc.
+			}
+
+				document.write(String(m[0]);
 
 			    var feed = new Instafeed({
 			        get: 'tagged',
 			        tagName: 'awesome',
-			        access_token: access_token,
+			        accessToken: String(m[0]),
 			    });
 			    feed.run();
 			</script>
