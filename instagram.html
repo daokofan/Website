@@ -118,7 +118,10 @@
 		            var $instagram = $( '#instagram' );
 		                $instagram.html('');
 
-		            for ( var i = 0; i < response.data.length; i++ ) {
+
+//response.data.length
+
+		            for ( var i = 0; i < 1; i++ ) {
 		                imageUrl = response.data[i].images.standard_resolution.url;
 		                $instagram.append( '<img src="' + imageUrl + '" />' );
 		            }
