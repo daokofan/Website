@@ -110,7 +110,7 @@
 			url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + parsed_token;
 
 			$( document ).ready(function() {
-				document.getJSON( url, function( response ) {
+				getJSON( url, function( response ) {
 		            var $instagram = $( '#instagram' );
 		                $instagram.html('');
 
