@@ -125,6 +125,7 @@
     			$.ajax({
 	            type: 'GET',
 	            url: url,
+	            count: 1,
 	            dataType: 'jsonp',
 	            success: function( response ) {
 	                if ( typeof callback === 'function' ) callback( response );
