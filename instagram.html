@@ -105,12 +105,10 @@
 			    // eg m[0] etc.
 			}
 
-				document.write(String(m[0]));
-
 			    var feed = new Instafeed({
 			        get: 'tagged',
 			        tagName: 'awesome',
-			        accessToken: String(m[0]),
+			        accessToken: m[0],
 			    });
 			    feed.run();
 			</script>
