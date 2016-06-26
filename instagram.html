@@ -115,7 +115,7 @@
 		                $instagram.html('');
 
 		            for ( var i = 0; i < response.data.length; i++ ) {
-		                imageUrl = response.data[i].images.low_resolution.url;
+		                imageUrl = response.data[i].images.standard_resolution.url;
 		                $instagram.append( '<img src="' + imageUrl + '" />' );
 		            }
 				});
