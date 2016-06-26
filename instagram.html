@@ -103,34 +103,34 @@
 			    // View your result using the m-variable.
 			    // eg m[0] etc.
 			}
-				parsed_token = m[0].substring(5);
+			
+			parsed_token = m[0].substring(5);
 			user_id = 'daoko_official';
 			url = 'https://api.instagram.com/v1/users/' + user_id + '/media/recent/?access_token=' + parsed_token;
 
-$( document ).ready(function() {
-			getJSON( url, function( response ) {
-            var $instagram = $( '#instagram' );
-                $instagram.html('');
+			$( document ).ready(function() {
+				getJSON( url, function( response ) {
+		            var $instagram = $( '#instagram' );
+		                $instagram.html('');
 
-            for ( var i = 0; i < response.data.length; i++ ) {
-                imageUrl = response.data[i].images.low_resolution.url;
-                $instagram.append( '<img src="' + imageUrl + '" />' );
-            });
-}
+		            for ( var i = 0; i < response.data.length; i++ ) {
+		                imageUrl = response.data[i].images.low_resolution.url;
+		                $instagram.append( '<img src="' + imageUrl + '" />' );
+		            }
+				});
+			}
 
 
-
-
-		getJSON: function( url, callback ) {
-        	$.ajax({
-            type: 'GET',
-            url: url,
-            dataType: 'jsonp',
-            success: function( response ) {
-                if ( typeof callback === 'function' ) callback( response );
-            }
-        });
-    }
+			getJSON: function( url, callback ) {
+	        	$.ajax({
+	            type: 'GET',
+	            url: url,
+	            dataType: 'jsonp',
+	            success: function( response ) {
+	                if ( typeof callback === 'function' ) callback( response );
+	            	}
+	        	});
+    		}
 
 			</script>
 
