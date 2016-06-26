@@ -107,7 +107,10 @@
 			parsed_token = m[0].substring(5);
 			user_id = 'daoko_official';
 			//url = 'https://api.instagram.com/v1/users/' + user_id + '/media/recent/?access_token=' + parsed_token;
-			url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + parsed_token;
+			
+			//url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + parsed_token;
+
+			url = 'https://www.instagram.com/daoko_official/media/';
 
 			$( document ).ready(function() {
 				getJSON( url, function( response ) {
@@ -125,7 +128,6 @@
     			$.ajax({
 	            type: 'GET',
 	            url: url,
-	            count: 1,
 	            dataType: 'jsonp',
 	            success: function( response ) {
 	                if ( typeof callback === 'function' ) callback( response );
