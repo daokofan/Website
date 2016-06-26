@@ -46,7 +46,7 @@
 								<li><a href="twitter.html">Twitter</a></li>
 								<li><a href="tumblr.html">Tumblr</a></li>
 								<li><a href="youtube.html">Youtube</a></li>
-								<li><a href="instagram.html">Instagram</a></li>
+								<li><a href="https://api.instagram.com/oauth/authorize/?client_id=6603787b2b67430d8b12b4a8415c6dbd&redirect_uri=https://daokofan.github.io/instagram.html&response_type=code">Instagram</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -91,14 +91,17 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript">
-    			var feed = new Instafeed({
-       			 get: 'popular',
-       			 userId: '88f34df3676d4b52b741ba7b5b2b984f',
-       			 clientId: '6603787b2b67430d8b12b4a8415c6dbd',
-       			 tagName: 'DAOKO',
-       			 template: '<a class="animation" href="{{link}}"><img src="{{image}}" /></a>'
-    			});
-    			feed.run();
+
+				var hash = window.location.hash;
+				var access_token = hash.replace('#access_token', '');
+				document.write(access_token);
+
+			    var feed = new Instafeed({
+			        get: 'tagged',
+			        tagName: 'awesome',
+			        accessToken: access_token,
+			    });
+			    feed.run();
 			</script>
 
 	</body>
