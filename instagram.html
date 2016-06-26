@@ -91,6 +91,7 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript">
+
 			var client_id = '6603787b2b67430d8b12b4a8415c6dbd';
 			var re = /code=([\w\.]+)/; 
 			var str = window.location;
@@ -104,25 +105,19 @@
 			    // eg m[0] etc.
 			}
 			
-			parsed_token = m[0].substring(5);
-			user_id = 'daoko_official';
+			var parsed_token = m[0].substring(5);
 
-			//url = 'https://api.instagram.com/v1/users/' + user_id + '/media/recent/?access_token=' + parsed_token;
-			
-			url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + parsed_token;
+			var user_id = 'daoko_official';
 
-			//url = 'https://www.instagram.com/daoko_official/media';
+			var url = 'https://api.instagram.com/v1/users/' + user_id + '/media/recent/?access_token=' + parsed_token;
 
 			$( document ).ready(function() {
 				getJSON( url, function( response ) {
 		            var $instagram = $( '#instagram' );
 		                $instagram.html('');
 
-
-//response.data.length
-
-		            for ( var i = 0; i < 1; i++ ) {
-		                imageUrl = response.data[i].images.standard_resolution.url;
+		            for ( var i = 0; i < response.data.length; i++ ) {
+		                var imageUrl = response.data[i].images.standard_resolution.url;
 		                $instagram.append( '<img src="' + imageUrl + '" />' );
 		            }
 				});
@@ -138,7 +133,6 @@
 	            	}
 	        	});
     		}
-
 			</script>
 
 	</body>
